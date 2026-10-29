@@ -27,6 +27,24 @@
           "ruta": "contenido/discernimiento/semana-1.md"
         }
       ]
+    },
+    {
+      "titulo": "Introducción · Principio y Fundamento",
+      "generada": true,
+      "items": [
+        {
+          "titulo": "Día 1 · El fin del hombre",
+          "ruta": "contenido/meditaciones/Introduccion/Introduccion_Dia_1_El_fin_del_hombre.md"
+        },
+        {
+          "titulo": "Día 2 · Las creaturas y el «tanto cuanto»",
+          "ruta": "contenido/meditaciones/Introduccion/Introduccion_Dia_2_Las_creaturas_y_el_tanto_cuanto.md"
+        },
+        {
+          "titulo": "Día 3 · La indiferencia",
+          "ruta": "contenido/meditaciones/Introduccion/Introduccion_Dia_3_La_indiferencia.md"
+        }
+      ]
     }
   ]
 }

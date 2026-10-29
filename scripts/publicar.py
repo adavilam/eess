@@ -7,6 +7,8 @@ Uso:
 Meditaciones
     Lee       privado/**/Semana_N_Dia_M_Titulo.md   (formato de la skill: encabezado, meditación y,
                                                      tras la línea `=== DIRECTOR ===`, lo privado)
+              privado/**/Introduccion_Dia_M_Titulo.md  (Principio y Fundamento; `semana: 0`)
+              Con `publicar: no` en el encabezado, el archivo no se publica.
     Escribe   contenido/meditaciones/Semana_N/*.md  (solo lo que ve el ejercitante)
 
 Discernimiento de espíritus
@@ -27,7 +29,7 @@ from pathlib import Path
 
 DIRECTOR_MARK = re.compile(r"^\s*=== DIRECTOR ===\s*$", re.M)
 TEXTO_PRIVADO = re.compile(r"orientaciones\s+para\s+el\s+director", re.I)
-NOMBRE = re.compile(r"^Semana_(\d+)_Dia_(\d+)_.+\.md$")
+NOMBRE = re.compile(r"^(?:Semana_(\d+)|Introduccion)_Dia_(\d+)_.+\.md$")
 SI = {"si", "sí", "true", "yes"}
 
 
@@ -58,11 +60,14 @@ def recoger_meditaciones(origen):
         if not m or "discernimiento" in ruta.parts:
             continue
         meta, meditacion = leer(ruta)
-        meta.setdefault("semana", m.group(1))
+        if meta.get("publicar", "si").lower() not in SI:
+            continue
+        meta.setdefault("semana", m.group(1) or "0")
         meta.setdefault("dia", m.group(2))
         if not meta.get("titulo"):
             sys.exit(f"{ruta}: falta 'titulo' en el encabezado.")
-        partes = [f"# Semana {meta['semana']} – Día {meta['dia']} · {meta['titulo']}"]
+        marca = meta.get("etiqueta") or f"Semana {meta['semana']} – Día {meta['dia']}"
+        partes = [f"# {marca} · {meta['titulo']}"]
         if meta.get("semana_probable"):
             partes.append(f"*Semana ignaciana: {meta['semana_probable']}*")
         partes.append(meditacion)
@@ -114,18 +119,21 @@ def main():
 
     semanas = {}
     for semana, dia, nombre, archivo, texto in meditaciones:
-        carpeta = contenido / "meditaciones" / f"Semana_{semana}"
+        nombre_carpeta = "Introduccion" if semana == 0 else f"Semana_{semana}"
+        carpeta = contenido / "meditaciones" / nombre_carpeta
         carpeta.mkdir(parents=True, exist_ok=True)
         (carpeta / archivo).write_text(texto, encoding="utf-8")
         titulo = texto.splitlines()[0].lstrip("# ").split(" · ", 1)[-1]
         grupo = semanas.setdefault(semana, {"nombre": "", "items": []})
         grupo["nombre"] = nombre or grupo["nombre"]
         grupo["items"].append({"titulo": f"Día {dia} · {titulo}",
-                               "ruta": f"contenido/meditaciones/Semana_{semana}/{archivo}"})
+                               "ruta": f"contenido/meditaciones/{nombre_carpeta}/{archivo}"})
     for semana in sorted(semanas):
-        etiqueta = f"Semana {semana}"
-        if semanas[semana]["nombre"]:
-            etiqueta += f" · {semanas[semana]['nombre']}"
+        nombre = semanas[semana]["nombre"]
+        if semana == 0:
+            etiqueta = nombre or "Introducción"
+        else:
+            etiqueta = f"Semana {semana}" + (f" · {nombre}" if nombre else "")
         generadas.append({"titulo": etiqueta, "generada": True, "items": semanas[semana]["items"]})
 
     indice = json.loads(indice_ruta.read_text(encoding="utf-8"))

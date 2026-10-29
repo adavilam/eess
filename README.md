@@ -26,6 +26,8 @@ Abre `http://localhost:8000`.
 2. Ejecuta `python scripts/publicar.py`. El script copia a `contenido/meditaciones/` solo la parte del ejercitante y la agrega al menú.
 3. Revisa, haz commit y sube los cambios.
 
+El menú agrupa las meditaciones por Semana, con secciones que se despliegan y recuerdan su estado. Para organizar una Semana larga (la Segunda tiene 13 sesiones) en temas desplegables, añade `grupo: Nombre del tema` al encabezado de cada archivo, por ejemplo `grupo: Encarnación y Nacimiento`. Las meditaciones de un mismo grupo deben ir consecutivas.
+
 El script se detiene sin publicar nada si encuentra «orientaciones para el Director» antes de la marca `=== DIRECTOR ===`.
 
 ## Discernimiento de espíritus por Semana

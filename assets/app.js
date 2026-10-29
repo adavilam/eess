@@ -2,11 +2,22 @@
   "use strict";
 
   var RUTA_INDICE = "contenido/indice.json";
+  var CLAVE = "eess.menu-abierto";
   var $nav = document.getElementById("nav");
   var $contenido = document.getElementById("contenido");
   var $menu = document.getElementById("menu");
   var titulo = "Ejercicios Espirituales 2026";
-  var rutas = [];
+  var rutas = [];      // todas las páginas, en el orden del menú
+  var secuencia = [];  // meditaciones, en el orden del retiro
+  var abiertas = {};   // id de sección o grupo -> desplegado
+
+  function leerEstado() {
+    try { return JSON.parse(localStorage.getItem(CLAVE)) || null; } catch (e) { return null; }
+  }
+
+  function guardarEstado() {
+    try { localStorage.setItem(CLAVE, JSON.stringify(abiertas)); } catch (e) { /* sin almacenamiento */ }
+  }
 
   function rutaValida(ruta) {
     return /^contenido\/[^?#]+\.md$/.test(ruta) && ruta.indexOf("..") === -1;
@@ -26,33 +37,130 @@
     $contenido.appendChild(p);
   }
 
+  function crearDesplegable(id, texto, cantidad, nivel) {
+    var d = document.createElement("details");
+    d.className = "nivel" + nivel;
+    d.open = !!abiertas[id];
+    var s = document.createElement("summary");
+    var t = document.createElement("span");
+    t.className = "texto";
+    t.textContent = texto;
+    var n = document.createElement("span");
+    n.className = "cuenta";
+    n.textContent = cantidad;
+    s.appendChild(t);
+    s.appendChild(n);
+    d.appendChild(s);
+    d.addEventListener("toggle", function () {
+      abiertas[id] = d.open;
+      guardarEstado();
+    });
+    return d;
+  }
+
+  function crearEnlace(item) {
+    var li = document.createElement("li");
+    var a = document.createElement("a");
+    a.href = "#/" + item.ruta;
+    a.textContent = item.titulo;
+    a.dataset.ruta = item.ruta;
+    li.appendChild(a);
+    return li;
+  }
+
+  function crearControles() {
+    var caja = document.createElement("div");
+    caja.className = "controles";
+    [["Expandir todo", true], ["Contraer todo", false]].forEach(function (par) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = par[0];
+      b.addEventListener("click", function () {
+        Array.prototype.forEach.call($nav.querySelectorAll("details"), function (d) { d.open = par[1]; });
+      });
+      caja.appendChild(b);
+    });
+    return caja;
+  }
+
   function construirNav(indice) {
     titulo = indice.titulo || titulo;
+    var previo = leerEstado();
+    abiertas = previo || {};
     $nav.textContent = "";
-    indice.secciones.forEach(function (seccion) {
-      var h2 = document.createElement("h2");
-      h2.textContent = seccion.titulo;
+    $nav.appendChild(crearControles());
+
+    indice.secciones.forEach(function (seccion, i) {
+      var id = "s:" + seccion.titulo;
+      if (!previo && i === 0) abiertas[id] = true;
+      var d = crearDesplegable(id, seccion.titulo, seccion.items.length, 1);
       var ul = document.createElement("ul");
+      var grupoActual = null;
+      var ulGrupo = null;
       seccion.items.forEach(function (item) {
         rutas.push(item.ruta);
-        var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.href = "#/" + item.ruta;
-        a.textContent = item.titulo;
-        a.dataset.ruta = item.ruta;
-        li.appendChild(a);
-        ul.appendChild(li);
+        if (seccion.secuencia) secuencia.push(item);
+        var li = crearEnlace(item);
+        if (!item.grupo) {
+          grupoActual = null;
+          ul.appendChild(li);
+          return;
+        }
+        if (item.grupo !== grupoActual) {
+          grupoActual = item.grupo;
+          var cantidad = seccion.items.filter(function (x) { return x.grupo === item.grupo; }).length;
+          var dg = crearDesplegable("g:" + seccion.titulo + "/" + item.grupo, item.grupo, cantidad, 2);
+          ulGrupo = document.createElement("ul");
+          dg.appendChild(ulGrupo);
+          var cont = document.createElement("li");
+          cont.appendChild(dg);
+          ul.appendChild(cont);
+        }
+        ulGrupo.appendChild(li);
       });
-      $nav.appendChild(h2);
-      $nav.appendChild(ul);
+      d.appendChild(ul);
+      $nav.appendChild(d);
     });
   }
 
   function marcarActivo(ruta) {
     Array.prototype.forEach.call($nav.querySelectorAll("a"), function (a) {
-      if (a.dataset.ruta === ruta) a.setAttribute("aria-current", "page");
-      else a.removeAttribute("aria-current");
+      if (a.dataset.ruta !== ruta) {
+        a.removeAttribute("aria-current");
+        return;
+      }
+      a.setAttribute("aria-current", "page");
+      for (var nodo = a.parentNode; nodo && nodo !== $nav; nodo = nodo.parentNode) {
+        if (nodo.tagName === "DETAILS") nodo.open = true;
+      }
+      if (a.scrollIntoView) a.scrollIntoView({ block: "nearest" });
     });
+  }
+
+  function crearPie(ruta) {
+    var i = secuencia.findIndex(function (x) { return x.ruta === ruta; });
+    if (i < 0) return;
+    var caja = document.createElement("nav");
+    caja.className = "pie-nav";
+    caja.setAttribute("aria-label", "Entre meditaciones");
+    [[i - 1, "← Anterior"], [i + 1, "Siguiente →"]].forEach(function (par) {
+      var item = secuencia[par[0]];
+      var a = document.createElement("a");
+      if (item) {
+        a.href = "#/" + item.ruta;
+        var rotulo = document.createElement("span");
+        rotulo.className = "rotulo";
+        rotulo.textContent = par[1];
+        var nombre = document.createElement("span");
+        nombre.textContent = item.titulo;
+        a.appendChild(rotulo);
+        a.appendChild(nombre);
+      } else {
+        a.className = "vacio";
+      }
+      caja.appendChild(a);
+    });
+    $contenido.appendChild(caja);
   }
 
   function ajustarEnlaces(ruta) {
@@ -97,6 +205,7 @@
         $contenido.innerHTML = marked.parse(texto, { breaks: true });
         envolverTablas();
         ajustarEnlaces(ruta);
+        crearPie(ruta);
         var h1 = $contenido.querySelector("h1");
         document.title = (h1 ? h1.textContent + " · " : "") + titulo;
         document.body.classList.remove("menu-abierto");

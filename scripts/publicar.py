@@ -9,6 +9,8 @@ Meditaciones
                                                      tras la línea `=== DIRECTOR ===`, lo privado)
               privado/**/Introduccion_Dia_M_Titulo.md  (Principio y Fundamento; `semana: 0`)
               Con `publicar: no` en el encabezado, el archivo no se publica.
+              Con `grupo: Nombre` en el encabezado, el menú agrupa las meditaciones de una Semana
+              bajo un tema desplegable (por ejemplo, `grupo: Encarnación y Nacimiento`).
     Escribe   contenido/meditaciones/Semana_N/*.md  (solo lo que ve el ejercitante)
 
 Discernimiento de espíritus
@@ -74,7 +76,7 @@ def recoger_meditaciones(origen):
         texto = "\n\n".join(partes) + "\n"
         comprobar(ruta, texto)
         paginas.append((int(meta["semana"]), int(meta["dia"]), meta.get("semana_nombre", ""),
-                        ruta.name, texto))
+                        ruta.name, texto, meta.get("grupo", "")))
     return sorted(paginas)
 
 
@@ -118,7 +120,7 @@ def main():
         generadas.append({"titulo": "Discernimiento de espíritus", "generada": True, "items": items})
 
     semanas = {}
-    for semana, dia, nombre, archivo, texto in meditaciones:
+    for semana, dia, nombre, archivo, texto, subgrupo in meditaciones:
         nombre_carpeta = "Introduccion" if semana == 0 else f"Semana_{semana}"
         carpeta = contenido / "meditaciones" / nombre_carpeta
         carpeta.mkdir(parents=True, exist_ok=True)
@@ -126,15 +128,19 @@ def main():
         titulo = texto.splitlines()[0].lstrip("# ").split(" · ", 1)[-1]
         grupo = semanas.setdefault(semana, {"nombre": "", "items": []})
         grupo["nombre"] = nombre or grupo["nombre"]
-        grupo["items"].append({"titulo": f"Día {dia} · {titulo}",
-                               "ruta": f"contenido/meditaciones/{nombre_carpeta}/{archivo}"})
+        item = {"titulo": f"Día {dia} · {titulo}",
+                "ruta": f"contenido/meditaciones/{nombre_carpeta}/{archivo}"}
+        if subgrupo:
+            item["grupo"] = subgrupo
+        grupo["items"].append(item)
     for semana in sorted(semanas):
         nombre = semanas[semana]["nombre"]
         if semana == 0:
             etiqueta = nombre or "Introducción"
         else:
             etiqueta = f"Semana {semana}" + (f" · {nombre}" if nombre else "")
-        generadas.append({"titulo": etiqueta, "generada": True, "items": semanas[semana]["items"]})
+        generadas.append({"titulo": etiqueta, "generada": True, "secuencia": True,
+                          "items": semanas[semana]["items"]})
 
     indice = json.loads(indice_ruta.read_text(encoding="utf-8"))
     indice["secciones"] = [s for s in indice["secciones"] if not s.get("generada")] + generadas

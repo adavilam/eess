@@ -1,0 +1,32 @@
+{
+  "titulo": "Ejercicios Espirituales 2026",
+  "secciones": [
+    {
+      "titulo": "Programa",
+      "items": [
+        {
+          "titulo": "Plan diario",
+          "ruta": "contenido/plan-diario.md"
+        },
+        {
+          "titulo": "Calendario",
+          "ruta": "contenido/calendario.md"
+        },
+        {
+          "titulo": "Duración de los Ejercicios",
+          "ruta": "contenido/duracion.md"
+        }
+      ]
+    },
+    {
+      "titulo": "Discernimiento de espíritus",
+      "generada": true,
+      "items": [
+        {
+          "titulo": "Primera Semana",
+          "ruta": "contenido/discernimiento/semana-1.md"
+        }
+      ]
+    }
+  ]
+}

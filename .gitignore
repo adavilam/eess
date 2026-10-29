@@ -1,0 +1,5 @@
+privado/*
+!privado/.gitkeep
+.claude/
+__pycache__/
+*.pdf

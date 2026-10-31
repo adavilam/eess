@@ -7,9 +7,9 @@
 - **Actitud corporal.** Ponte de rodillas para empezar este tiempo sagrado.
 - **Presencia de Dios.** El Señor te mira con amor. Adóralo con profundidad.
 - **Oración preparatoria.** Pide a Dios nuestro Señor gracia para que todas tus intenciones, acciones y operaciones sean puramente ordenadas en servicio y alabanza de su divina majestad [46].
-- **Historia.** Dios no es un poder lejano, sino un Padre que cuida: en sus manos puedes abandonarte con libertad y seguridad. De saberte amado nace la indiferencia, que no es frialdad, sino el equilibrio de un alma que no se deja dominar por nada que no sea Dios.
-- **Composición de lugar.** Mírate en medio de un gran mercado o almacén donde están todas las cosas del mundo: salud y enfermedad, riqueza y pobreza, honor y deshonor. Estás en el centro, con la balanza de tu voluntad en equilibrio, mirando solo a Dios, que te espera al final del camino y tiene el rostro de Jesús.
-- **Gracia que pides.** «Dame, Señor, la gracia de amarte con todas mis fuerzas y de ser verdaderamente indiferente a las criaturas, para elegir solo lo que más me conduce a Ti.»
+- **Historia.** Ayer miraste las cosas como don y como camino. Hoy miras la libertad con que San Ignacio te invita a tratarlas: «hacernos indiferentes a todas las cosas criadas» [23].
+- **Composición de lugar.** Mírate en el centro de una sala, con una balanza en las manos y en equilibrio. A los lados hay muchas cosas buenas: salud y enfermedad, riqueza y pobreza, honor y deshonor, vida larga y corta. Al fondo está Jesús, mirándote, esperando tu respuesta.
+- **Gracia que pides.** «Dame, Señor, la gracia de amarte tanto que ninguna cosa me sea absoluta, y de desear lo que más me acerque a Ti, con la libertad de un hijo.»
 
 ## II. Cuerpo de la meditación · 30 minutos
 
@@ -17,30 +17,40 @@
 
 ### Memoria
 
-Trae a la memoria los apegos que han marcado tu vida reciente. Recuerda situaciones en que la salud, el dinero o la opinión de los demás se volvieron el centro de tu preocupación; momentos en que te sentiste esclavo de una necesidad creada. Y recuerda también los momentos en que te supiste sostenido por Dios cuando nada de eso te dio seguridad. Purifica tu memoria reconociendo que Él estuvo presente también en esa carencia.
+Trae a la memoria las palabras de San Ignacio: «es menester hacernos indiferentes a todas las cosas criadas, en todo lo que es concedido a la libertad de nuestro libre albedrío y no le está prohibido; en tal manera que no queramos de nuestra parte más salud que enfermedad, riqueza que pobreza, honor que deshonor, vida larga que corta, y por consiguiente en todo lo demás; solamente deseando y eligiendo lo que más nos conduce para el fin que somos criados» [23].
+
+Recuerda ahora un momento reciente en que un deseo decidió por ti antes de que pudieras pensar: una compra, una respuesta, un enojo, una distracción. Y recuerda, si lo hay, un momento en que lograste detenerte. Recuerda también la cosa que nombraste ayer. Deja que vuelvan sin forzarlas y sin juzgarlas.
 
 ### Entendimiento
 
-Razona sobre las palabras de San Ignacio: «es menester hacernos indiferentes a todas las cosas criadas» [23]. Fíjate en el verbo: *hacernos*. La indiferencia es una tarea activa, no algo que te sucede. No se trata de dejar de querer, ni de la calma helada de quien ya no siente. Es la docilidad de un afecto lleno de amor, que se pone a disposición de Dios.
+**Primero, sobre qué es libre tu corazón.** La indiferencia no toca el fin último, que ya está decidido: ser de Dios. Se refiere a los medios, a todo lo demás. Eres libre para elegir entre salud y enfermedad, riqueza y pobreza, honor y deshonor, porque tu fin está puesto en Otro. Pregúntate: ¿qué medio estoy tratando como si fuera mi fin?
 
-Mira también lo que la indiferencia no toca: no es el fin último, que está decidido; tiene que ver con los medios. Y crea un espacio: entre tu deseo y la cosa deseada, un respiro donde Dios puede hablar antes de que el apetito decida. Dios es siempre mayor, y por eso no puedes agotar su voluntad en una sola cosa. Ante Él, ninguna criatura es absoluta; pero Él puede encontrarse en todas.
+**Después, Dios siempre Mayor.** Ninguna cosa creada puede ocupar el lugar de Dios, por buena que sea. Nada es Dios, y sin embargo Dios puede encontrarse en todas las cosas. Por eso ninguna te agota ni te basta: siempre hay más en Él que en ellas. Pregúntate: ¿qué cosa espero que me dé lo que solo Dios puede darme?
 
-Ahora mira a Jesús. Él es la imagen perfecta de esta libertad: el Hijo disponible, que dijo sí al Padre hasta el final. Ser indiferente es parecerte a Él, para que el Padre pueda disponer de ti. Pregúntate: ¿por qué deseo tanto la salud, si quizá en la enfermedad puedo glorificar mejor a Dios?, ¿por qué temo la pobreza, si Cristo fue pobre?
+**Luego, mira a Jesús.** Él es la imagen perfecta de esta libertad: el Hijo disponible, que dijo sí al Padre hasta el final. Ser indiferente es parecerte a Él para que el Padre pueda disponer de ti. No es un esfuerzo que lograrás solo: es una obra que el Espíritu hace en ti, y por eso se pide. Pregúntate: ¿en qué me parezco hoy a Jesús, y en qué todavía no?
+
+**Por último, el amor mayor.** Solo se puede dejar con paz lo que se ama cuando se ama algo todavía más. Quien sabe usar y dejar sin resentimiento ni inhibiciones crece en libertad de hijo. Pregúntate: ¿qué dejo hoy por un amor mayor, y lo dejo con paz o con rencor?
 
 ### Voluntad
 
-*Con reverencia, ejercita aquí la firmeza.* No se trata de no sentir, sino de no dejar que el sentimiento decida. Dile al Señor que quieres inclinar tu balanza hacia lo que Él quiera: «quiero y elijo lo que más me conduce al fin para el que fui criado» [23]. Y desea el «más»: no una carga mayor, sino un amor mayor, que se parece al de Cristo pobre y humilde. Ofrécele también la flojera y la tibieza que te hacen buscar siempre lo más cómodo antes que lo más divino.
+*Con reverencia, ejercita aquí la firmeza.*
+
+**Hacernos.** San Ignacio no dice «seamos» sino «hagámonos»: la indiferencia es una tarea activa y se ejercita. Elige una decisión pequeña de hoy, un gasto, una respuesta, un horario, y ofrécesela al Señor para ejercitarte: «hoy me hago libre en esto».
+
+**Una distancia.** Entre tu deseo y la cosa deseada hay un espacio donde Dios puede hablar. Quédate en él. Decide detener hoy un deseo durante un minuto antes de actuar, y en ese minuto pregunta: «¿qué quieres tú de mí aquí?».
+
+**El «más».** Dile al Señor: «quiero y elijo lo que más me conduce al fin para el que fui criado» [23]. Ese «más» no es un esfuerzo creciente, sino un amor creciente: un amor que responde a un Dios siempre Mayor. Desea el «más» como se desea corresponder a quien te ama, no como una carga que te impones.
 
 ## III. Coloquio · 15 minutos
 
-- **Con Cristo.** Habla con Él como un amigo habla con otro [54]. Preséntale tus miedos a ser indiferente.
 - **Con el Padre.** Ponte en sus manos y dile con tus palabras: «hágase tu voluntad».
-- **Petición.** Pídeles un corazón libre. Pregúntales: «¿qué hay en mi vida que me quita la paz y me impide ser libre?».
-- **Escucha.** Quédate en silencio ante lo que te digan sobre tus apegos de hoy.
+- **Con Jesús.** Habla con Él como un amigo habla con otro [54]. Preséntale tus miedos a ser libre y pídele un corazón indiferente, a imitación del suyo.
+- **Pregunta.** «¿Qué hay en mi vida que me quita la paz y me impide ser libre?»
+- **Escucha.** Quédate en silencio ante lo que te digan.
 - Cierra rezando despacio un Padrenuestro o el Alma de Cristo.
 
 ## IV. Examen · 5 minutos
 
 - **Revisa la hora.** ¿Fuiste fiel al tiempo o recortaste minutos? [12]
 - **Causas.** Si estuviste distraído, ¿por qué?, ¿preparaste bien el lugar? Si hubo consuelo o claridad, da gracias.
-- **Propósito.** Una resolución concreta para la próxima oración, por ejemplo: «mañana cuidaré más el silencio inicial».
+- **Propósito.** Un propósito concreto para hoy: detener un deseo un minuto antes de actuar y preguntarle a Dios qué quiere de ti.

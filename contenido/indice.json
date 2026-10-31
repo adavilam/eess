@@ -44,6 +44,10 @@
         {
           "titulo": "Día 3 · La indiferencia",
           "ruta": "contenido/meditaciones/Introduccion/Introduccion_Dia_3_La_indiferencia.md"
+        },
+        {
+          "titulo": "Día 4 · Repetición del Principio y Fundamento",
+          "ruta": "contenido/meditaciones/Introduccion/Introduccion_Dia_4_Repeticion_del_Principio_y_Fundamento.md"
         }
       ]
     }
